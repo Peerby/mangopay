@@ -37,6 +37,24 @@ module.exports = httpClient.extend({
       }
     }),
 
+    createByCard: httpMethod({
+      method: 'POST',
+      path: '/card/web',
+      params: {
+          'Tag': { required: false }
+        , 'AuthorId': { required: true }
+        , 'DebitedFunds': { required: true }
+        , 'Fees': { required: true }
+        , 'CreditedWalletId': { required: true }
+        , 'ReturnURL': { required: true }
+        , 'TemplateURLOptions': { }
+        , 'Culture': { required: true }
+        , 'CardType': { required: true }
+        , 'SecureMode': { }
+        , 'CreditedUserId': { }
+      }
+    }),
+
     fetch: httpMethod({
       method: 'GET',
       path: '/{Id}',
